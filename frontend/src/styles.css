@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #f0f2f5;
+  color: var(--primary-color);
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+/* Primary theme color */
+:root {
+  --primary-color: #0a2342; /* Updated to match navbar/nav color */
+  --primary-dark: #001529;
+  --primary-light: #f6faff;
+  --accent: #40a9ff;
+  --white: #fff;
+}
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+  background: var(--primary-color) !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background: var(--white) !important;
+  color: var(--primary-color) !important;
+}
+
+.ant-menu-dark .ant-menu-item {
+  color: var(--white) !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover {
+  background: #163d5c !important;
+  color: var(--white) !important;
+}
+
+/* Footer and header global styles */
+nz-footer, .custom-footer, .admin-footer {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+}
+
+nz-header, .custom-header, .admin-header {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+}
+
+/* Card and content backgrounds */
+.inner-content, .admin-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.08);
+  padding: 32px 32px 24px 32px;
+}
+
+.admin-analytics, .analytics-cards, .analytics-card, .admin-content, .inner-content {
+  padding: 32px 32px 24px 32px !important;
+}
+
+/* Add padding to all main content wrappers */
+.page-content, .main-content, .admin-content, .inner-content {
+  padding: 32px 32px 24px 32px !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+}
+a:hover {
+  color: var(--accent);
+}
+
+/* Table paddings */
+.ant-table, .ant-table-content, .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+  padding: 16px 16px !important;
+}

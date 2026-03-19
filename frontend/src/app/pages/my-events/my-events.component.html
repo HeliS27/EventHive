@@ -1,0 +1,47 @@
+<div style="margin-bottom: 32px;">
+  <h2 style="font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px;">My Registered Events</h2>
+  <p style="color: #b6c2e2; font-size: 16px; margin: 0;">Show your event QR code at the registration desk to check in.</p>
+</div>
+
+<div *ngIf="isLoading" style="text-align: center; margin: 50px 0;">
+  <nz-spin nzSimple nzSize="large"></nz-spin>
+</div>
+
+<nz-empty *ngIf="!isLoading && registrations.length === 0" nzNotFoundContent="You haven't registered for any events yet."></nz-empty>
+
+<div *ngIf="!isLoading" nz-row [nzGutter]="[24, 24]">
+  <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="8" *ngFor="let reg of registrations; let i = index">
+    <nz-card [nzHoverable]="true" class="custom-event-card" [nzBodyStyle]="{ padding: '0', background: '#172554', color: '#fff' }" style="background: #172554; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.10); border: none;">
+      <div style="height: 180px; background: #1e293b; display: flex; align-items: center; justify-content: center; position: relative;">
+        <span nz-icon nzType="calendar" style="font-size: 48px; color: #3b82f6;"></span>
+        <nz-tag [nzColor]="'#2563eb'" style="position: absolute; top: 20px; left: 20px; font-weight: bold; border: none; padding: 4px 16px; font-size: 14px; border-radius: 6px; background: #2563eb; color: #fff;">
+          {{ reg.eventCategory | uppercase }}
+        </nz-tag>
+      </div>
+      <div style="padding: 24px;">
+        <h3 style="font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 12px;">{{ reg.eventTitle }}</h3>
+        <div style="color: #b6c2e2; font-size: 15px; margin-bottom: 8px;">
+          <span nz-icon nzType="calendar" style="margin-right: 6px;"></span>
+          {{ reg.eventDate | date:'mediumDate' }} at {{ reg.eventDate | date:'shortTime' }}
+        </div>
+        <div style="color: #b6c2e2; font-size: 15px; margin-bottom: 8px;">
+          <span nz-icon nzType="idcard" style="margin-right: 6px;"></span>
+          Registration ID: <span style="font-family: monospace; font-size: 13px; color: #60a5fa;">{{ reg.id }}</span>
+        </div>
+        <div style="color: #b6c2e2; font-size: 15px; margin-bottom: 8px;">
+          <span nz-icon nzType="clock-circle" style="margin-right: 6px;"></span>
+          Registered On: {{ reg.registrationDate | date:'mediumDate' }}
+        </div>
+        <div class="qr-container" style="margin: 16px 0; display: flex; align-items: center;">
+          <img [src]="qrCodes[i]" alt="QR Code" *ngIf="qrCodes[i]" style="width: 90px; height: 90px; border: 1px solid #334155; background: #fff; padding: 4px; border-radius: 8px;" />
+          <div *ngIf="!qrCodes[i]" class="qr-placeholder" style="width: 90px; height: 90px; background: #334155; color: #b6c2e2; display: flex; align-items: center; justify-content: center; font-size: 12px; border-radius: 8px;">Generating QR...</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <nz-tag *ngIf="reg.isCheckedIn" [nzColor]="'success'" style="font-weight: bold;">Checked In</nz-tag>
+          <nz-tag *ngIf="!reg.isCheckedIn" [nzColor]="'warning'">Pending Check-in</nz-tag>
+          <button *ngIf="!reg.isCheckedIn" nz-button nzType="default" nzDanger nzSize="small" nz-popconfirm nzPopconfirmTitle="Are you sure you want to cancel this registration?" (nzOnConfirm)="cancelRegistration(reg.eventId)">Cancel</button>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>

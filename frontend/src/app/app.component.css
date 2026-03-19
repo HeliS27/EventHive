@@ -1,0 +1,111 @@
+.layout {
+  min-height: 100vh;
+}
+
+.logo {
+  width: 150px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  float: left;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 31px;
+}
+
+nz-content {
+  padding: 32px 32px 24px 32px !important;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 32px 32px 24px 32px !important;
+  min-height: 280px;
+  margin-top: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.custom-header {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+}
+
+/* .nav-menu {
+  line-height: 64px;
+  border-bottom: none;
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  background: transparent;
+  align-items: center;
+} */
+ .nav-menu {
+  line-height: 64px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin-left: auto;   /* pushes entire menu to right */
+}
+
+.nav-menu .ant-menu-item {
+  font-weight: 500;
+  color: var(--white) !important;
+  margin-left: 0 !important;
+}
+
+.nav-menu .ant-menu-item-selected {
+  background: var(--white) !important;
+  color: var(--primary-color) !important;
+}
+
+.nav-menu .nav-right {
+  margin-left: 24px !important;
+}
+
+/* Remove extra margin from first nav item */
+.nav-menu .ant-menu-item:first-child {
+  margin-left: 0 !important;
+}
+
+/* .nav-right {
+  margin-left: auto;
+} */
+
+.custom-footer {
+  background: var(--primary-color) !important;
+  border-top: 1px solid #eaecf0;
+  padding: 16px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #98a2b3;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-left a {
+  color: #667085;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-left a:hover {
+  color: var(--primary-color);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  color: #667085;
+}

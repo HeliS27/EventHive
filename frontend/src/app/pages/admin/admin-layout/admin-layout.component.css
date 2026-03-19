@@ -1,0 +1,45 @@
+.admin-layout {
+  min-height: 100vh;
+}
+.admin-sider {
+  background: var(--primary-color) !important;
+}
+.admin-logo {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  padding: 24px 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  background: var(--primary-color) !important;
+}
+.admin-header {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 32px;
+  border-bottom: 1px solid #001529;
+}
+.admin-header-title {
+  color: var(--white);
+}
+.admin-content {
+  margin: 24px 16px 0;
+  padding: 32px 32px 24px 32px !important;
+  background: #fff;
+  min-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.admin-footer {
+  text-align: center;
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+  padding: 16px 0;
+  border-top: 1px solid var(--primary-color);
+}
+.active {
+  background: var(--white) !important;
+  color: var(--primary-color) !important;
+}

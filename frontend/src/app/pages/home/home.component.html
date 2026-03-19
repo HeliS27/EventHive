@@ -1,0 +1,143 @@
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-badge">🎓 Annual College Tech-Fest 2026</div>
+    <h1 class="hero-title">Where Innovation<br><span class="hero-title-accent">Meets Opportunity</span></h1>
+    <p class="hero-subtitle">
+      Register for workshops, hackathons, and seminars led by industry experts.
+      Learn, build, and compete — all under one roof.
+    </p>
+    <div class="hero-actions">
+      <button nz-button nzType="primary" nzSize="large" routerLink="/events" class="cta-btn-primary">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        Browse All Events
+      </button>
+      <button nz-button nzType="default" nzSize="large" routerLink="/register" class="cta-btn-secondary">
+        <span nz-icon nzType="user-add" nzTheme="outline"></span>
+        Sign Up Free
+      </button>
+    </div>
+  </div>
+  <div class="hero-illustration">
+    <div class="hero-graphic">
+      <div class="floating-card card-1">
+        <span class="card-icon">💡</span>
+        <span>Hackathon</span>
+      </div>
+      <div class="floating-card card-2">
+        <span class="card-icon">🛠️</span>
+        <span>Workshop</span>
+      </div>
+      <div class="floating-card card-3">
+        <span class="card-icon">🎤</span>
+        <span>Seminar</span>
+      </div>
+      <div class="hero-circle-bg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-section">
+  <nz-spin [nzSpinning]="loading" nzTip="Loading stats...">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-number">{{ totalEvents }}</span>
+        <span class="stat-label">Events Happening</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">{{ totalSeats }}+</span>
+        <span class="stat-label">Seats Available</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">{{ categories.length }}</span>
+        <span class="stat-label">Event Categories</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Free to Join</span>
+      </div>
+    </div>
+  </nz-spin>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features-section">
+  <div class="section-header">
+    <h2 class="section-title">Everything You Need</h2>
+    <p class="section-subtitle">One platform to discover, register, and attend the best tech events at your college.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon-wrap icon-blue">
+        <span nz-icon nzType="search" nzTheme="outline"></span>
+      </div>
+      <h3>Discover Events</h3>
+      <p>Browse workshops, hackathons, and seminars filtered by category, date, and seat availability.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap icon-purple">
+        <span nz-icon nzType="form" nzTheme="outline"></span>
+      </div>
+      <h3>Instant Registration</h3>
+      <p>Register in under a minute. Seats are reserved instantly with a real-time availability check.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap icon-green">
+        <span nz-icon nzType="qrcode" nzTheme="outline"></span>
+      </div>
+      <h3>Digital Pass</h3>
+      <p>Get a unique QR code digital pass for every event. Just show it at the desk to check in.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon-wrap icon-orange">
+        <span nz-icon nzType="dashboard" nzTheme="outline"></span>
+      </div>
+      <h3>Admin Dashboard</h3>
+      <p>Admins can create events, manage attendees, and view live analytics from a single dashboard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS PREVIEW -->
+<section class="preview-section" *ngIf="!loading && upcomingEvents.length > 0">
+  <div class="section-header">
+    <h2 class="section-title">Upcoming Events</h2>
+    <a routerLink="/events" class="view-all-link">View All →</a>
+  </div>
+  <div class="preview-grid">
+    <div class="preview-card" *ngFor="let event of upcomingEvents" (click)="navigate('/events')">
+      <div class="preview-card-top">
+        <nz-tag [nzColor]="getTagColor(event.category)">{{ event.category }}</nz-tag>
+        <span class="preview-seats" [class.sold-out]="event.isSoldOut">
+          {{ event.isSoldOut ? 'Sold Out' : event.availableSeats + ' seats left' }}
+        </span>
+      </div>
+      <h3 class="preview-title">{{ event.title }}</h3>
+      <p class="preview-desc">{{ event.description | slice:0:100 }}...</p>
+      <div class="preview-footer">
+        <span class="preview-date">
+          <span nz-icon nzType="calendar" nzTheme="outline"></span>
+          {{ event.eventDate | date:'MMM d, yyyy' }}
+        </span>
+        <button nz-button nzType="primary" nzSize="small" routerLink="/events" [disabled]="event.isSoldOut">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>Ready to Join?</h2>
+    <p>Create your account in seconds and start registering for events today.</p>
+    <button nz-button nzType="primary" nzSize="large" routerLink="/register" class="cta-banner-btn">
+      Get Started — It's Free
+    </button>
+  </div>
+</section>

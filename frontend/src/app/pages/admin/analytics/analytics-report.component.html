@@ -1,0 +1,101 @@
+<!-- EventHive Analytics Dashboard (no navbar, no export/report buttons) -->
+<div style="background: #f5f8fa; min-height: 100vh; padding: 40px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+    <h1 style="font-size: 2.5rem; font-weight: 800; color: #101828; margin-bottom: 8px;">Dashboard Analytics</h1>
+    <p style="color: #667085; font-size: 18px; margin-bottom: 32px;">Overview of EventHive performance and registrations.</p>
+
+    <!-- Top Analytics Cards -->
+    <div style="display: flex; gap: 24px; margin-bottom: 32px; flex-wrap: wrap;">
+      <div style="flex: 1 1 220px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 28px 32px; min-width: 220px;">
+        <div style="font-size: 15px; color: #667085; font-weight: 600; margin-bottom: 8px;">Registrations Today</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #101828;">124 <span style="font-size: 1rem; color: #12b76a; font-weight: 700; vertical-align: super;">↑3%</span></div>
+        <div style="color: #98a2b3; font-size: 14px;">vs. yesterday (121)</div>
+      </div>
+      <div style="flex: 1 1 220px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 28px 32px; min-width: 220px;">
+        <div style="font-size: 15px; color: #667085; font-weight: 600; margin-bottom: 8px;">Total Tickets Issued</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #101828;">3,240 <span style="font-size: 1rem; color: #12b76a; font-weight: 700; vertical-align: super;">↑12%</span></div>
+        <div style="color: #98a2b3; font-size: 14px;">Total event lifecycle</div>
+      </div>
+      <div style="flex: 1 1 220px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 28px 32px; min-width: 220px;">
+        <div style="font-size: 15px; color: #667085; font-weight: 600; margin-bottom: 8px;">Registered Users</div>
+        <div style="font-size: 2.2rem; font-weight: 800; color: #101828;">2,850 <span style="font-size: 1rem; color: #12b76a; font-weight: 700; vertical-align: super;">↑8%</span></div>
+        <div style="color: #98a2b3; font-size: 14px;">Verified institutional emails</div>
+      </div>
+    </div>
+
+    <!-- Capacity and Most Popular Event -->
+    <div style="display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap;">
+      <div style="flex: 1 1 340px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 32px 32px 28px 32px; min-width: 340px;">
+        <div style="font-size: 15px; color: #667085; font-weight: 600; margin-bottom: 8px;">Total Capacity Filled (%)</div>
+        <div style="font-size: 2.5rem; font-weight: 800; color: #101828;">85.5%</div>
+        <div style="color: #12b76a; font-size: 15px; font-weight: 600; margin-bottom: 8px;">↑ 2.5% from last week</div>
+        <div style="margin-top: 8px;">
+          <div style="background: #e0e7ef; border-radius: 8px; height: 10px; width: 100%; overflow: hidden;">
+            <div style="background: #2563eb; width: 85.5%; height: 100%; border-radius: 8px;"></div>
+          </div>
+          <div style="font-size: 13px; color: #667085; margin-top: 4px; text-align: right;">PROGRESS <span style="color: #2563eb; font-weight: 700;">85.5%</span></div>
+        </div>
+      </div>
+      <div style="flex: 1 1 340px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 32px 32px 28px 32px; min-width: 340px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+          <span style="font-size: 1.2rem; color: #2563eb; background: #e0e7ef; border-radius: 50%; padding: 8px; display: flex; align-items: center; justify-content: center;"><i class="fa fa-fire"></i></span>
+          <span style="font-size: 15px; color: #667085; font-weight: 600;">Most Popular Event</span>
+          <span style="background: #f79009; color: #fff; font-size: 12px; font-weight: 700; border-radius: 8px; padding: 2px 10px; margin-left: 8px;">HOT</span>
+        </div>
+        <div style="font-size: 1.2rem; font-weight: 700; color: #101828; margin-bottom: 4px;">Cloud Computing Fundamentals</div>
+        <div style="color: #667085; font-size: 15px; margin-bottom: 8px;">1,240 Attendees &nbsp;·&nbsp; Starts in 2d</div>
+        <a href="#" style="color: #2563eb; font-weight: 600; text-decoration: underline; font-size: 15px;">View Event Details</a>
+      </div>
+    </div>
+
+    <!-- Detailed Performance Metrics Table -->
+    <div style="background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(16,30,54,0.04); padding: 32px 32px 24px 32px;">
+      <h3 style="font-size: 20px; font-weight: 700; color: #101828; margin-bottom: 20px;">Detailed Performance Metrics</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="color: #667085; font-size: 15px; font-weight: 700; text-align: left;">
+            <th style="padding: 8px 0;">Event Name</th>
+            <th style="padding: 8px 0;">Registrations</th>
+            <th style="padding: 8px 0;">Capacity Status</th>
+            <th style="padding: 8px 0;">Revenue Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top: 1px solid #f0f2f5;">
+            <td style="padding: 12px 0; font-weight: 600; color: #101828;">AI Workshop 2024</td>
+            <td style="padding: 12px 0; color: #2563eb; font-weight: 700;">842 / 1000</td>
+            <td style="padding: 12px 0;">
+              <div style="background: #e0e7ef; border-radius: 8px; height: 8px; width: 84%; display: inline-block; vertical-align: middle; margin-right: 8px;">
+                <div style="background: #2563eb; width: 84%; height: 100%; border-radius: 8px;"></div>
+              </div>
+              <span style="color: #2563eb; font-weight: 700;">84%</span>
+            </td>
+            <td style="padding: 12px 0; color: #12b76a; font-weight: 700;">On Target</td>
+          </tr>
+          <tr style="border-top: 1px solid #f0f2f5;">
+            <td style="padding: 12px 0; font-weight: 600; color: #101828;">Cybersecurity Hackathon</td>
+            <td style="padding: 12px 0; color: #f79009; font-weight: 700;">450 / 500</td>
+            <td style="padding: 12px 0;">
+              <div style="background: #e0e7ef; border-radius: 8px; height: 8px; width: 90%; display: inline-block; vertical-align: middle; margin-right: 8px;">
+                <div style="background: #f79009; width: 90%; height: 100%; border-radius: 8px;"></div>
+              </div>
+              <span style="color: #f79009; font-weight: 700;">90%</span>
+            </td>
+            <td style="padding: 12px 0; color: #f79009; font-weight: 700;">Exceeded</td>
+          </tr>
+          <tr style="border-top: 1px solid #f0f2f5;">
+            <td style="padding: 12px 0; font-weight: 600; color: #101828;">Blockchain Summit</td>
+            <td style="padding: 12px 0; color: #2563eb; font-weight: 700;">120 / 400</td>
+            <td style="padding: 12px 0;">
+              <div style="background: #e0e7ef; border-radius: 8px; height: 8px; width: 30%; display: inline-block; vertical-align: middle; margin-right: 8px;">
+                <div style="background: #2563eb; width: 30%; height: 100%; border-radius: 8px;"></div>
+              </div>
+              <span style="color: #2563eb; font-weight: 700;">30%</span>
+            </td>
+            <td style="padding: 12px 0; color: #667085; font-weight: 700;">In Progress</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

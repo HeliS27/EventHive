@@ -1,0 +1,28 @@
+<div *ngIf="paginatedEvents.length === 0">
+  <p>No events found.</p>
+</div>
+<div nz-row [nzGutter]="[24, 24]" *ngIf="paginatedEvents.length > 0">
+  <div nz-col [nzXs]="24" [nzSm]="12" [nzMd]="12" [nzLg]="8" *ngFor="let event of paginatedEvents">
+    <nz-card [nzHoverable]="true" class="custom-event-card" [nzBodyStyle]="{ padding: '0' }">
+      <div class="card-image-wrapper">
+        <img *ngIf="event.imageUrl" [src]="event.imageUrl" alt="Event Image" class="event-image" />
+        <div *ngIf="!event.imageUrl" class="event-image-placeholder">
+          <span nz-icon nzType="picture" style="font-size: 32px; color: #98a2b3;"></span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+          <nz-tag [nzColor]="getCategoryColor(event.category)" class="category-tag">{{ event.category | uppercase }}</nz-tag>
+          <span style="color: #98a2b3; font-size: 12px;">• {{ event.venue }}</span>
+        </div>
+        <h3 class="event-title">{{ event.title }}</h3>
+        <div class="event-date">
+          <span nz-icon nzType="calendar" style="margin-right: 6px;"></span>
+          {{ event.eventDate | date:'mediumDate' }}
+        </div>
+        <!-- ...existing code for progress, button, etc... -->
+      </div>
+    </nz-card>
+  </div>
+</div>
+<!-- ...existing code for pagination, etc... -->

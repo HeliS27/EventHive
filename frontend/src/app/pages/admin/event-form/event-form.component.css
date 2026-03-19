@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  padding: 32px 32px 24px 32px;
+}
+
+button[nzType="primary"], .create-event-btn {
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
+  border: none !important;
+}
