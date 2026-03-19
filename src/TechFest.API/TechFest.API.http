@@ -1,0 +1,6 @@
+@TechFest.API_HostAddress = http://localhost:5081
+
+GET {{TechFest.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

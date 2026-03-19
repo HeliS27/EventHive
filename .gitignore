@@ -1,0 +1,48 @@
+# .gitignore for EventHive (Angular + ASP.NET Core)
+
+# Node modules
+frontend/node_modules/
+
+# Angular build output
+frontend/dist/
+frontend/.angular/cache/
+
+# Environment files
+frontend/src/environments/*.ts
+
+# Logs and error files
+*.log
+*.tmp
+*.temp
+build_error.log
+backend_error.log
+
+# IDE/editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ASP.NET Core build output
+src/TechFest.API/bin/
+src/TechFest.API/obj/
+src/TechFest.Core/bin/
+src/TechFest.Core/obj/
+src/TechFest.Infrastructure/bin/
+src/TechFest.Infrastructure/obj/
+
+# SQLite database
+src/TechFest.API/techfest.db
+
+# Publish output
+publish/
+
+# Misc
+wwwroot/uploads/*
+!wwwroot/uploads/.gitkeep
